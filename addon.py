@@ -571,8 +571,8 @@ class BlenderMCPServer:
 
                         # Clean up temporary file
                         try:
-                            tempfile._cleanup()  # This will clean up all temporary files
-                        except:
+                            os.remove(tmp_path)
+                        except OSError:
                             pass
 
                         return {
